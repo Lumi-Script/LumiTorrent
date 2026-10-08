@@ -11,6 +11,7 @@ export interface FilterOptions {
   orderBy: string;
   minimumRating: string;
   cachedOnly: boolean;
+  quality?: string;
 }
 
 interface FilterBarProps {

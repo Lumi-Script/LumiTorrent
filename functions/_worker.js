@@ -7,18 +7,7 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    // 1. CORS Preflight
-    if (request.method === 'OPTIONS') {
-      return new Response(null, {
-        status: 204,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, DELETE',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-          'Access-Control-Max-Age': '86400',
-        },
-      });
-    }
+    // Removed wildcard CORS preflight
 
     // 2. Torbox API Gateway Reroute
     if (url.pathname.startsWith('/api/torbox')) {
@@ -52,9 +41,6 @@ export default {
         });
 
         const responseHeaders = new Headers(torboxResponse.headers);
-        responseHeaders.set('Access-Control-Allow-Origin', '*');
-        responseHeaders.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-        responseHeaders.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
         return new Response(torboxResponse.body, {
           status: torboxResponse.status,
@@ -71,7 +57,6 @@ export default {
             status: 502,
             headers: {
               'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
             },
           }
         );
@@ -88,7 +73,6 @@ export default {
         headers: { Accept: 'application/json' },
       });
       const resHeaders = new Headers(res.headers);
-      resHeaders.set('Access-Control-Allow-Origin', '*');
 
       return new Response(res.body, {
         status: res.status,

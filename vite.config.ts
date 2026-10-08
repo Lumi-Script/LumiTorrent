@@ -16,14 +16,7 @@ function torboxDevReroutePlugin() {
           return next();
         }
 
-        // Handle preflight OPTIONS
-        if (req.method === 'OPTIONS') {
-          res.statusCode = 204;
-          res.setHeader('Access-Control-Allow-Origin', '*');
-          res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-          res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-          return res.end();
-        }
+        // Removed wildcard CORS preflight
 
         const url = new URL(req.url, 'http://localhost:3000');
         let targetPath = url.pathname.replace(/^\/api\/torbox/, '');
@@ -71,9 +64,6 @@ function torboxDevReroutePlugin() {
               res.setHeader(k, v);
             }
           });
-          res.setHeader('Access-Control-Allow-Origin', '*');
-          res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-          res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
           const resData = await response.arrayBuffer();
           res.end(Buffer.from(resData));

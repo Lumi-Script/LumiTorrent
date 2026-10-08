@@ -15,6 +15,7 @@ export async function fetchMoviesFromFrontend(params: {
   sortBy?: string;
   orderBy?: string;
   minimumRating?: string;
+  quality?: string;
 }): Promise<YTSListResponse> {
   const queryParams = new URLSearchParams({
     page: String(params.page || 1),
@@ -36,6 +37,9 @@ export async function fetchMoviesFromFrontend(params: {
   }
   if (params.minimumRating && params.minimumRating !== '0') {
     queryParams.set('minimum_rating', params.minimumRating);
+  }
+  if (params.quality && params.quality !== 'All') {
+    queryParams.set('quality', params.quality);
   }
 
   const directUrl = `${YTS_BASE_URL}/list_movies.json?${queryParams.toString()}`;

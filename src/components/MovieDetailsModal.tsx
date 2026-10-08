@@ -466,33 +466,45 @@ export function MovieDetailsModal({
                                   )}
                                 </button>
 
-                                {/* Instant Download Button (replaces download torrent button) */}
-                                <button
-                                  type="button"
-                                  onClick={() => handleTorbox(t)}
-                                  disabled={isAdding}
-                                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm ${
-                                    isCached
-                                      ? 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-950/50'
-                                      : hasApiKey
-                                      ? 'bg-neutral-800 hover:bg-neutral-700 text-neutral-200 border border-neutral-700/60'
-                                      : 'bg-neutral-800/90 hover:bg-neutral-700 text-neutral-300 border border-neutral-700/50'
-                                  }`}
-                                  title={
-                                    isCached
-                                      ? `⚡ Instant cloud debrid download for ${label}`
-                                      : hasApiKey
-                                      ? `Add and cache ${label} to Torbox account`
-                                      : 'Configure Torbox API key in Settings'
-                                  }
-                                >
-                                  {isAdding ? (
-                                    <Loader2 className="w-3.5 h-3.5 animate-spin text-white" />
-                                  ) : (
-                                    <Zap className={`w-3.5 h-3.5 ${isCached ? 'fill-white text-white' : 'text-emerald-400'}`} />
-                                  )}
-                                  <span>Instant</span>
-                                </button>
+                                {/* Instant Download Button / Stream Button */}
+                                {isDownloaded ? (
+                                  <button
+                                    type="button"
+                                    onClick={() => onOpenDownload(t)}
+                                    className="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm bg-sky-600 hover:bg-sky-500 text-white shadow-sky-950/60"
+                                    title={`⚡ Download / Stream directly (Torbox ID #${downloadedRecord?.id}${downloadedRecord?.fileID !== undefined ? `, File #${downloadedRecord.fileID}` : ''})`}
+                                  >
+                                    <Download className="w-3.5 h-3.5 text-white" />
+                                    <span>Download</span>
+                                  </button>
+                                ) : (
+                                  <button
+                                    type="button"
+                                    onClick={() => handleTorbox(t)}
+                                    disabled={isAdding}
+                                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm ${
+                                      isCached
+                                        ? 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-950/50'
+                                        : hasApiKey
+                                        ? 'bg-neutral-800 hover:bg-neutral-700 text-neutral-200 border border-neutral-700/60'
+                                        : 'bg-neutral-800/90 hover:bg-neutral-700 text-neutral-300 border border-neutral-700/50'
+                                    }`}
+                                    title={
+                                      isCached
+                                        ? `⚡ Instant cloud debrid download for ${label}`
+                                        : hasApiKey
+                                        ? `Add and cache ${label} to Torbox account`
+                                        : 'Configure Torbox API key in Settings'
+                                    }
+                                  >
+                                    {isAdding ? (
+                                      <Loader2 className="w-3.5 h-3.5 animate-spin text-white" />
+                                    ) : (
+                                      <Zap className={`w-3.5 h-3.5 ${isCached ? 'fill-white text-white' : 'text-emerald-400'}`} />
+                                    )}
+                                    <span>Instant</span>
+                                  </button>
+                                )}
                               </div>
                             </td>
                           </tr>

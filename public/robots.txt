@@ -1,0 +1,20 @@
+# LumiTorrent robots.txt
+# Controls crawler access for search engine indexing compliance
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+User-agent: Googlebot-Image
+Allow: /
+Allow: /og-image.jpg
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+
+Sitemap: https://lumitorrent.pages.dev/sitemap.xml

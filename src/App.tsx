@@ -6,6 +6,7 @@ import { MovieCard } from './components/MovieCard';
 import { MovieDetailsModal } from './components/MovieDetailsModal';
 import { SettingsModal } from './components/SettingsModal';
 import { Pagination } from './components/Pagination';
+import { FooterSeo } from './components/FooterSeo';
 import { ToastProvider, useToast } from './components/Toast';
 import { Movie, Torrent, CacheMap, YTSListResponse } from './types/movie';
 import {
@@ -81,6 +82,21 @@ function MainApp() {
       // Ignore
     }
   };
+ 
+  // Dynamic document title for search indexing and user navigation
+  useEffect(() => {
+    let title = 'LumiTorrent - YTS & Torbox Movie Hub';
+    if (filters.queryTerm) {
+      title = `${filters.queryTerm} - Movies on LumiTorrent`;
+    } else if (filters.genre && filters.genre !== 'All Genres') {
+      title = `${filters.genre} Movies - LumiTorrent`;
+    } else if (filters.quality && filters.quality !== 'All') {
+      title = `${filters.quality} Movies - LumiTorrent`;
+    } else if (currentPage > 1) {
+      title = `LumiTorrent - Page ${currentPage}`;
+    }
+    document.title = title;
+  }, [filters.queryTerm, filters.genre, filters.quality, currentPage]);
 
   // Fetch movies directly from frontend (accel.li supports CORS)
   const fetchMovies = useCallback(async () => {
@@ -568,34 +584,8 @@ function MainApp() {
         )}
       </main>
 
-      {/* Footer */}
-      <footer className="w-full border-t border-neutral-800 bg-neutral-950 py-6 text-xs text-neutral-500 mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <Film className="w-4 h-4 text-emerald-500" />
-            <span className="font-semibold text-neutral-300">LumiTorrent</span>
-            <span>· Powered by YTS API & Torbox Debrid</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <a
-              href="https://yts.gg/api"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-neutral-300 transition-colors"
-            >
-              YTS API Docs
-            </a>
-            <a
-              href="https://torbox.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-neutral-300 transition-colors"
-            >
-              Torbox Service
-            </a>
-          </div>
-        </div>
-      </footer>
+      {/* Enhanced SEO Footer & FAQ Section */}
+      <FooterSeo />
 
       {/* Settings Modal */}
       <SettingsModal

@@ -525,9 +525,21 @@ export function MovieDetailsModal({
 
           {/* Modal Footer */}
           <div className="p-4 bg-neutral-950 border-t border-neutral-800 flex items-center justify-between text-xs text-neutral-400">
-            <span className="font-mono">
-              YTS Movie ID: #{currentMovie.id}
-            </span>
+            <div className="flex items-center gap-3">
+              <span className="font-mono">
+                YTS Movie ID: #{currentMovie.id}
+              </span>
+              <span className="text-neutral-600">·</span>
+              <a
+                href="https://yts.mx/dmca"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-emerald-400 text-neutral-400 underline inline-flex items-center gap-1 text-[11px] transition-colors"
+              >
+                <span>YTS DMCA Takedown</span>
+                <ExternalLink className="w-2.5 h-2.5 text-neutral-500" />
+              </a>
+            </div>
             <button
               onClick={onClose}
               className="px-4 py-1.5 bg-neutral-800 hover:bg-neutral-700 text-white rounded-lg transition-colors font-medium"

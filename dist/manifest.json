@@ -1,0 +1,16 @@
+{
+  "short_name": "LumiTorrent",
+  "name": "LumiTorrent - YTS & Torbox Movie Hub",
+  "description": "Streamlined YTS movie catalog with live Torbox instant cache detection, 720p/1080p/2160p x265 quality badges, and one-click TorBox downloading.",
+  "icons": [
+    {
+      "src": "/og-image.jpg",
+      "type": "image/jpeg",
+      "sizes": "1200x630"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "display": "standalone"
+}

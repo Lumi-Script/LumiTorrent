@@ -7,40 +7,246 @@
     
     <!-- Primary Meta Tags -->
     <meta name="title" content="LumiTorrent - YTS & Torbox Movie Hub" />
-    <meta name="description" content="Streamlined YTS movie catalog with live Torbox instant cache detection, 720p/1080p/2160p x265 quality badges, and one-click TorBox downloading." />
-    <meta name="keywords" content="movies, torrents, yts, torbox, streaming, downloads, instant cache, 1080p, 4k, x265, yify" />
+    <meta name="description" content="Streamlined YTS movie catalog with live Torbox instant cache detection, 720p/1080p/2160p x265 quality badges, and one-click TorBox cloud downloading." />
+    <meta name="keywords" content="movies, torrents, yts, torbox, streaming, downloads, instant cache, 1080p, 4k, x265, yify, debrid, movie hub" />
     <meta name="author" content="Lumi-Script" />
-    <meta name="robots" content="index, follow" />
     <meta name="language" content="English" />
+    <meta name="theme-color" content="#09090b" />
+
+    <!-- Googlebot & Search Crawler Indexing Directives -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="rating" content="general" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lumitorrent.pages.dev/" id="canonical-url" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <link rel="manifest" href="/manifest.json" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LumiTorrent" />
+    <meta property="og:url" content="https://lumitorrent.pages.dev/" />
     <meta property="og:title" content="LumiTorrent - YTS & Torbox Movie Hub" />
-    <meta property="og:description" content="Streamlined YTS movie catalog with live Torbox instant cache detection, 720p/1080p/2160p x265 quality badges, and one-click TorBox downloading." />
-    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:description" content="Streamlined YTS movie catalog with live Torbox instant cache detection, 720p/1080p/2160p x265 quality badges, and one-click TorBox cloud downloading." />
+    <meta property="og:image" content="https://lumitorrent.pages.dev/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="LumiTorrent - YTS & Torbox Movie Hub Preview" />
+    <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter -->
+    <!-- Twitter Card -->
     <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="lumitorrent.pages.dev" />
+    <meta property="twitter:url" content="https://lumitorrent.pages.dev/" />
     <meta property="twitter:title" content="LumiTorrent - YTS & Torbox Movie Hub" />
-    <meta property="twitter:description" content="Streamlined YTS movie catalog with live Torbox instant cache detection, 720p/1080p/2160p x265 quality badges, and one-click TorBox downloading." />
-    <meta property="twitter:image" content="/og-image.jpg" />
+    <meta property="twitter:description" content="Streamlined YTS movie catalog with live Torbox instant cache detection, 720p/1080p/2160p x265 quality badges, and one-click TorBox cloud downloading." />
+    <meta property="twitter:image" content="https://lumitorrent.pages.dev/og-image.jpg" />
 
-    <meta name="theme-color" content="#09090b" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310b981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='18' height='18' x='3' y='3' rx='2'/><path d='m9 8 6 4-6 4Z'/></svg>" />
 
-    <!-- Schema.org Markup -->
+    <!-- Schema.org JSON-LD (Search Action, WebApplication, FAQPage) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "LumiTorrent",
-      "description": "Streamlined YTS movie catalog with live Torbox instant cache detection, 720p/1080p/2160p x265 quality badges, and one-click TorBox downloading.",
-      "applicationCategory": "MultimediaApplication"
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://lumitorrent.pages.dev/#webapp",
+          "name": "LumiTorrent",
+          "url": "https://lumitorrent.pages.dev/",
+          "description": "Streamlined YTS movie catalog with live Torbox instant cache detection, 720p/1080p/2160p x265 quality badges, and one-click TorBox cloud downloading.",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "All modern web browsers (Chrome, Firefox, Safari, Edge, Opera)",
+          "browserRequirements": "Requires JavaScript. Requires HTML5.",
+          "isAccessibleForFree": true,
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "featureList": [
+            "Real-time Torbox cloud cache status inspection",
+            "Instant 720p, 1080p, and 2160p 4K UHD release badges",
+            "High-Efficiency Video Coding (x265/HEVC) filter support",
+            "Direct one-click Torbox debrid downloading and streaming",
+            "Zero server logs with client-side credential storage",
+            "Multi-genre, release year, and minimum rating filtering"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://lumitorrent.pages.dev/#website",
+          "url": "https://lumitorrent.pages.dev/",
+          "name": "LumiTorrent",
+          "description": "Discover high quality movies with live Torbox instant cache availability.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://lumitorrent.pages.dev/?query={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://lumitorrent.pages.dev/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is LumiTorrent?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "LumiTorrent is a modern, privacy-focused movie catalog interface powered by the YTS API. It integrates live Torbox debrid cache detection to let users see which releases are already cached in high-speed cloud storage for instant playback without waiting for peer-to-peer seeding."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does Torbox instant cache detection work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When you enter your Torbox API key in Settings, LumiTorrent automatically queries Torbox cloud servers for every movie release on screen. Cached releases display an instant-ready badge, allowing direct cloud download or immediate media streaming."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What video formats and resolutions does LumiTorrent support?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "LumiTorrent displays badges for 720p HD, 1080p Full HD, and 2160p 4K Ultra HD releases, including modern x265 (HEVC) high-efficiency video codecs with compact file sizes and superior color fidelity."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does LumiTorrent store private API keys or user data?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. LumiTorrent runs as a client-side single page application. Your Torbox API key and personal preferences are saved exclusively in your browser's private localStorage and are never transmitted to or stored on any external server."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does LumiTorrent host copyrighted media files?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. LumiTorrent does not host, upload, or store any media files, video streams, or torrent binaries. It operates strictly as a metadata viewer querying public APIs. Debrid cloud caching and downloads occur directly through your authorized Torbox account. For copyright takedown requests regarding indexed torrent listings, copyright owners can submit notices directly via the official YTS DMCA policy at https://yts.mx/dmca."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
   </head>
   <body class="bg-neutral-950 text-neutral-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-300">
-    <div id="root"></div>
+    <!-- Prerendered Semantic SEO Content (Cleanly hydrated / replaced by React upon mount) -->
+    <div id="root">
+      <header style="border-bottom: 1px solid #262626; padding: 1.25rem 1.5rem; background-color: #09090b; display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <svg style="width: 1.75rem; height: 1.75rem; color: #10b981;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 8 6 4-6 4Z"/></svg>
+          <span style="font-weight: 700; font-size: 1.25rem; color: #f5f5f5;">LumiTorrent</span>
+        </div>
+        <p style="color: #a3a3a3; font-size: 0.875rem; margin: 0;">YTS &amp; Torbox Movie Catalog</p>
+      </header>
+
+      <main style="max-width: 80rem; margin: 0 auto; padding: 2.5rem 1.5rem;">
+        <section style="text-align: center; margin-bottom: 3rem;">
+          <h1 style="font-size: 2.25rem; font-weight: 800; color: #ffffff; margin-bottom: 1rem; line-height: 1.2;">
+            LumiTorrent — Free YTS Movie Catalog &amp; Instant Torbox Debrid Hub
+          </h1>
+          <p style="font-size: 1.125rem; color: #a3a3a3; max-width: 48rem; margin: 0 auto 1.5rem auto; line-height: 1.6;">
+            Browse the latest movie releases with real-time Torbox cloud cache detection. Enjoy 720p, 1080p, and 2160p 4K UHD x265 quality badges, advanced genre filtering, and high-speed one-click debrid downloading.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem;">
+            <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;">⚡ Live Torbox Cloud Cache</span>
+            <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;">🎬 720p / 1080p / 4K UHD</span>
+            <span style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;">📦 HEVC x265 High Efficiency</span>
+            <span style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;">🔒 100% Client-Side Privacy</span>
+          </div>
+        </section>
+
+        <!-- Feature Overview -->
+        <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 3.5rem;">
+          <div style="background: #171717; border: 1px solid #262626; border-radius: 0.75rem; padding: 1.5rem;">
+            <h2 style="font-size: 1.125rem; font-weight: 600; color: #10b981; margin-bottom: 0.5rem;">Instant Cloud Cache Check</h2>
+            <p style="font-size: 0.875rem; color: #a3a3a3; line-height: 1.5;">Check whether movie torrents are pre-cached in Torbox cloud storage in real time. Skip seed-waiting and enjoy instant downloads.</p>
+          </div>
+          <div style="background: #171717; border: 1px solid #262626; border-radius: 0.75rem; padding: 1.5rem;">
+            <h2 style="font-size: 1.125rem; font-weight: 600; color: #3b82f6; margin-bottom: 0.5rem;">4K &amp; x265 Precision Badges</h2>
+            <p style="font-size: 0.875rem; color: #a3a3a3; line-height: 1.5;">Easily filter and identify high-efficiency x265 video encodings, saving bandwidth while maintaining crisp 1080p and 4K cinema visuals.</p>
+          </div>
+          <div style="background: #171717; border: 1px solid #262626; border-radius: 0.75rem; padding: 1.5rem;">
+            <h2 style="font-size: 1.125rem; font-weight: 600; color: #ec4899; margin-bottom: 0.5rem;">Rich Movie Exploration</h2>
+            <p style="font-size: 0.875rem; color: #a3a3a3; line-height: 1.5;">Explore by release year, genre (Action, Sci-Fi, Drama, Thriller, Comedy), IMDb rating, and popularity with responsive pagination.</p>
+          </div>
+        </section>
+
+        <!-- Movie Categories & Genres -->
+        <section style="background: #121214; border: 1px solid #262626; border-radius: 1rem; padding: 2rem; margin-bottom: 3.5rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 700; color: #f5f5f5; margin-bottom: 1rem;">Browse Popular Movie Genres</h2>
+          <p style="font-size: 0.925rem; color: #a3a3a3; margin-bottom: 1.5rem;">Explore thousands of curated titles indexed with cast info, IMDb scores, synopsis, trailers, and verified torrent hashes:</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="background: #262626; color: #d4d4d4; padding: 0.35rem 0.75rem; border-radius: 0.5rem; font-size: 0.85rem;">Action</span>
+            <span style="background: #262626; color: #d4d4d4; padding: 0.35rem 0.75rem; border-radius: 0.5rem; font-size: 0.85rem;">Adventure</span>
+            <span style="background: #262626; color: #d4d4d4; padding: 0.35rem 0.75rem; border-radius: 0.5rem; font-size: 0.85rem;">Animation</span>
+            <span style="background: #262626; color: #d4d4d4; padding: 0.35rem 0.75rem; border-radius: 0.5rem; font-size: 0.85rem;">Comedy</span>
+            <span style="background: #262626; color: #d4d4d4; padding: 0.35rem 0.75rem; border-radius: 0.5rem; font-size: 0.85rem;">Crime</span>
+            <span style="background: #262626; color: #d4d4d4; padding: 0.35rem 0.75rem; border-radius: 0.5rem; font-size: 0.85rem;">Documentary</span>
+            <span style="background: #262626; color: #d4d4d4; padding: 0.35rem 0.75rem; border-radius: 0.5rem; font-size: 0.85rem;">Drama</span>
+            <span style="background: #262626; color: #d4d4d4; padding: 0.35rem 0.75rem; border-radius: 0.5rem; font-size: 0.85rem;">Fantasy</span>
+            <span style="background: #262626; color: #d4d4d4; padding: 0.35rem 0.75rem; border-radius: 0.5rem; font-size: 0.85rem;">Horror</span>
+            <span style="background: #262626; color: #d4d4d4; padding: 0.35rem 0.75rem; border-radius: 0.5rem; font-size: 0.85rem;">Mystery</span>
+            <span style="background: #262626; color: #d4d4d4; padding: 0.35rem 0.75rem; border-radius: 0.5rem; font-size: 0.85rem;">Romance</span>
+            <span style="background: #262626; color: #d4d4d4; padding: 0.35rem 0.75rem; border-radius: 0.5rem; font-size: 0.85rem;">Sci-Fi</span>
+            <span style="background: #262626; color: #d4d4d4; padding: 0.35rem 0.75rem; border-radius: 0.5rem; font-size: 0.85rem;">Thriller</span>
+          </div>
+        </section>
+
+        <!-- Detailed Frequently Asked Questions -->
+        <section style="margin-bottom: 3.5rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 700; color: #f5f5f5; margin-bottom: 1.5rem;">Frequently Asked Questions (FAQ)</h2>
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div style="background: #171717; border: 1px solid #262626; border-radius: 0.75rem; padding: 1.25rem;">
+              <h3 style="font-size: 1rem; font-weight: 600; color: #e5e5e5; margin-bottom: 0.5rem;">What is LumiTorrent?</h3>
+              <p style="font-size: 0.875rem; color: #a3a3a3; line-height: 1.5; margin: 0;">LumiTorrent is a lightweight, responsive movie exploration interface that integrates YTS metadata with Torbox cloud debrid cache checking. It allows movie enthusiasts to find quality releases and verify instant cloud streaming availability without clutter or advertisements.</p>
+            </div>
+            <div style="background: #171717; border: 1px solid #262626; border-radius: 0.75rem; padding: 1.25rem;">
+              <h3 style="font-size: 1rem; font-weight: 600; color: #e5e5e5; margin-bottom: 0.5rem;">How does Torbox instant cache detection work?</h3>
+              <p style="font-size: 0.875rem; color: #a3a3a3; line-height: 1.5; margin: 0;">By connecting your Torbox API token in Settings, LumiTorrent checks whether release hashes are pre-downloaded across Torbox debrid servers. When a movie displays the green instant badge, it can be downloaded or streamed directly from high-speed cloud servers at uncapped speeds.</p>
+            </div>
+            <div style="background: #171717; border: 1px solid #262626; border-radius: 0.75rem; padding: 1.25rem;">
+              <h3 style="font-size: 1rem; font-weight: 600; color: #e5e5e5; margin-bottom: 0.5rem;">Are my API keys and personal data secure?</h3>
+              <p style="font-size: 0.875rem; color: #a3a3a3; line-height: 1.5; margin: 0;">Yes. LumiTorrent executes entirely on the client side. Your Torbox API token is stored strictly in your browser's local sandbox (localStorage). No user passwords, session tokens, or browsing histories are logged, tracked, or sent to third-party databases.</p>
+            </div>
+            <div style="background: #171717; border: 1px solid #262626; border-radius: 0.75rem; padding: 1.25rem;">
+              <h3 style="font-size: 1rem; font-weight: 600; color: #e5e5e5; margin-bottom: 0.5rem;">What is the difference between x264 and x265 releases?</h3>
+              <p style="font-size: 0.875rem; color: #a3a3a3; line-height: 1.5; margin: 0;">x265 (High Efficiency Video Coding / HEVC) delivers identical or superior picture fidelity at roughly half the file size of traditional x264 encodings. LumiTorrent highlights x265 releases so you can choose optimal storage efficiency and fast streaming.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Compliance & Legal Disclaimer -->
+        <section style="background: #121214; border: 1px solid #262626; border-radius: 0.75rem; padding: 1.5rem; color: #737373; font-size: 0.8125rem; line-height: 1.6;">
+          <h2 style="font-size: 0.95rem; font-weight: 600; color: #a3a3a3; margin-bottom: 0.5rem;">Compliance, Fair Use &amp; DMCA Disclaimer</h2>
+          <p style="margin: 0 0 0.5rem 0;">LumiTorrent is a client-side catalog search application. LumiTorrent does not host, upload, store, or transmit any video files, media content, or copyright-protected data on its servers. All metadata, titles, artwork, and descriptions are fetched dynamically via public third-party APIs (YTS &amp; Torbox).</p>
+          <p style="margin: 0 0 0.5rem 0;">Torbox integration operates purely via official API protocol using user-provided credentials. Users are responsible for complying with all local copyright and licensing regulations in their respective jurisdictions.</p>
+          <p style="margin: 0;">Because movie listings and torrent hashes originate from the public YTS catalog, copyright owners and agents requesting content removal or notice of claimed infringement should submit requests directly to the upstream provider via the <a href="https://yts.mx/dmca" target="_blank" rel="noopener noreferrer" style="color: #34d399; text-decoration: underline; font-weight: 600;">Official YTS DMCA Takedown Notice Form (yts.mx/dmca)</a>.</p>
+        </section>
+      </main>
+    </div>
+
+    <!-- Fallback for Non-JS Crawlers & Browsers -->
+    <noscript>
+      <div style="max-width: 800px; margin: 2rem auto; padding: 1.5rem; background: #171717; border-radius: 0.5rem; color: #d4d4d4; font-family: sans-serif; line-height: 1.6;">
+        <h2 style="color: #10b981;">LumiTorrent Web Application</h2>
+        <p>LumiTorrent requires JavaScript to be enabled in your browser for live interactive filtering and cloud debrid synchronization.</p>
+        <p>To browse movies with live Torbox instant cache detection, please enable JavaScript or view the comprehensive movie guide above.</p>
+      </div>
+    </noscript>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
